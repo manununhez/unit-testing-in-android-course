@@ -43,7 +43,7 @@ public class FragmentFrameHelper {
 
             // In a normal world, just popping back stack would be sufficient, but since android
             // is not normal, a call to popBackStack can leave the popped fragment on screen.
-            // Therefore, we start with manual removal of the current fragment.
+            // Therefore, we onStart with manual removal of the current fragment.
             // Description of the issue can be found here: https://stackoverflow.com/q/45278497/2463035
             removeCurrentFragment();
 
