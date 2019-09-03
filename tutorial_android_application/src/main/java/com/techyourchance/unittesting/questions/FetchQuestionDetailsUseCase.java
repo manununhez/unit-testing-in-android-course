@@ -6,11 +6,6 @@ import com.techyourchance.unittesting.networking.questions.QuestionSchema;
 
 public class FetchQuestionDetailsUseCase extends BaseObservable<FetchQuestionDetailsUseCase.Listener> {
 
-    public interface Listener {
-        void onQuestionDetailsFetched(QuestionDetails questionDetails);
-        void onQuestionDetailsFetchFailed();
-    }
-
     private final FetchQuestionDetailsEndpoint mFetchQuestionDetailsEndpoint;
 
     public FetchQuestionDetailsUseCase(FetchQuestionDetailsEndpoint fetchQuestionDetailsEndpoint) {
@@ -47,5 +42,11 @@ public class FetchQuestionDetailsUseCase extends BaseObservable<FetchQuestionDet
                             questionSchema.getBody()
                     ));
         }
+    }
+
+    public interface Listener {
+        void onQuestionDetailsFetched(QuestionDetails questionDetails);
+
+        void onQuestionDetailsFetchFailed();
     }
 }
